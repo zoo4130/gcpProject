@@ -17,10 +17,26 @@
 		<!-- Google Cloud -->
 			<!-- Google Compute Engine -->
 	
-	
-	
-	
-	
+			<!-- Google CloudSQL -->
+			<dependency>  
+    			<groupId>com.google.cloud.sql</groupId>  
+    			<artifactId>mysql-socket-factory</artifactId>  
+    			<version>1.0.8</version>  
+			</dependency>
+        	
+		<!-- MySQL  -->
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.42</version>
+        </dependency>
+		<!-- jdbc -->
+		<dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-jdbc</artifactId>
+	    	<version>${org.springframework-version}</version>
+		</dependency>
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -39,7 +55,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-				
+
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

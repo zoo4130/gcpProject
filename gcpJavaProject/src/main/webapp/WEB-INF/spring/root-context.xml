@@ -5,4 +5,12 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
+	<!-- pom.xml에 spring-jdbc -->	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property> 
+		<property name="url" value="jdbc:mysql://35.201.200.252:3306/null"></property> 
+		<property name="username" value="root"></property> 
+		<property name="password" value="levware!1234"></property> 
+	</bean>	
+		
 </beans>
