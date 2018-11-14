@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -17,6 +18,7 @@ import java.sql.SQLException;
 @Service("crudService")
 @Transactional
 public class CRUDService {
+	
 	//select
 	public void select(Map<String,Object> param) throws Exception {
 		Connection conn = null;
@@ -42,9 +44,10 @@ public class CRUDService {
 			rs = stmt.executeQuery(sql);
 			 
 			// 6. 실행결과 출력하기
-			System.out.println("-------------");
-			System.out.println("번호" + "  " + "이름" + "  " + "나이");
-			System.out.println("-------------");
+			Logger out = Logger.getLogger("SystemOut");
+			out.warn("-------------");
+			out.warn("번호" + "  " + "이름" + "  " + "나이");
+			out.warn("-------------");
 			while(rs.next()){
 				// 레코드의 칼럼은 배열과 달리 0부터 시작하지 않고 1부터 시작한다.
 				// 데이터베이스에서 가져오는 데이터의 타입에 맞게 getString 또는 getInt 등을 호출한다.
@@ -52,9 +55,10 @@ public class CRUDService {
 				String name = rs.getString(2);
 				String age = rs.getString(3);
 				 
-				System.out.println(no + " " + name + " " + age);
+				out.warn(no + " " + name + " " + age);
 			}
-			System.out.println("-------------");
+			out.warn("-------------");
+			
 		}catch( ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
 		}catch( SQLException e){
